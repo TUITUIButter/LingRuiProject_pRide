@@ -22,7 +22,9 @@ public class Rider {
         for(ArrayList<Crossroads> outIt : R){
             double min = Double.MAX_VALUE;
             for(Crossroads cross : outIt){
-                double distance = Math.pow(cross.getX() * cross.getX() + cross.getY() * cross.getY(), 0.5);
+                double x_d = cross.getX() - x;
+                double y_d = cross.getY() - y;
+                double distance = Math.pow(x_d * x_d + y_d * y_d, 0.5);
                 if(distance < min){
                     min = distance;
                 }
