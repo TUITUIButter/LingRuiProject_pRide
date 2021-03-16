@@ -18,14 +18,16 @@ public class RandomSet {
 
         //添加随机子集
         Random r = new Random();
-        for(int i = 1; i <= sizeOfR; i++){
-            ArrayList<Crossroads> subset = new ArrayList<>();
-            // 第i项随机添加2^i个
-            for(int j = 0; j < Math.pow(2,i-1); j++){
-                int temp = r.nextInt(n);
-                subset.add(crossroads.get(temp));
+        for(int k = 0; k < sizeOfR;k++){
+            for(int i = 1; i <= sizeOfR; i++){
+                ArrayList<Crossroads> subset = new ArrayList<>();
+                // 第i项随机添加2^i个
+                for(int j = 0; j < Math.pow(2,i-1); j++){
+                    int temp = r.nextInt(n);
+                    subset.add(crossroads.get(temp));
+                }
+                R.add(subset);
             }
-            R.add(subset);
         }
     }
 

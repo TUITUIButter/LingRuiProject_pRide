@@ -24,7 +24,8 @@ public class Rider {
             for(Crossroads cross : outIt){
                 double x_d = cross.getX() - x;
                 double y_d = cross.getY() - y;
-                double distance = Math.pow(x_d * x_d + y_d * y_d, 0.5);
+                //double distance = Math.pow(x_d * x_d + y_d * y_d, 0.5);
+                double distance = Math.abs(x_d) + Math.abs(y_d);
                 if(distance < min){
                     min = distance;
                 }
